@@ -354,106 +354,73 @@
     </div>
 </section>
 <!--services end-->
-
+            
+                                    <?php 
+                                    $all_PaymentOffer_info = DB::table('tbl_PaymentOffer')
+                                        ->where('publicatio_status', 1)
+                                        ->limit(4)
+                                        ->get();
+                                        
+                                    ?>
 <!--payment offer start -->
 <section class="section-pt-space">
     <div class="custom-container">
         <div class="row">
+            
             <div class="col-12 pr-0">
+                
                 <div class="slide-5 no-arrow">
+                  @foreach($all_PaymentOffer_info as $v_PaymentOffe)
                    <div>
                        <div class="paymant-offer-mian">
                            <div>
-                               <img src="../assets/images/layout-6/payment-offer/1.png" alt="paymet-offer" class="img-fluid">
-                               <h2>$202</h2>
-                               <h3>OUR FEATURED OFFERS</h3>
-                               <h4>shop for <span>$50 +</span></h4>
+                               <img src="{{$v_PaymentOffe->payment_offer_logo}}" alt="paymet-offer" class="img-fluid">
+                               <h2></h2>
+                               <h3>{{$v_PaymentOffe->payment_offer}}</h3>
+                               <h4>{{$v_PaymentOffe->payment_offer_short_description}}</h4>
                                <div class="payment-cod">code <span> &nbsp; : &nbsp; citioct</span></div>
                            </div>
                        </div>
                    </div>
-                    <div>
-                        <div class="paymant-offer-mian">
-                            <div>
-                                <img src="../assets/images/layout-6/payment-offer/2.png" alt="paymet-offer" class="img-fluid">
-                                <h2>$202</h2>
-                                <h3>OUR FEATURED OFFERS</h3>
-                                <h4>shop for <span>$50 +</span></h4>
-                                <div class="payment-cod">code <span> &nbsp; : &nbsp; citioct</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="paymant-offer-mian">
-                            <div>
-                                <img src="../assets/images/layout-6/payment-offer/1.png" alt="paymet-offer" class="img-fluid">
-                                <h2>$202</h2>
-                                <h3>OUR FEATURED OFFERS</h3>
-                                <h4>shop for <span>$50 +</span></h4>
-                                <div class="payment-cod">code <span> &nbsp; : &nbsp; citioct</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="paymant-offer-mian">
-                            <div>
-                                <img src="../assets/images/layout-6/payment-offer/2.png" alt="paymet-offer" class="img-fluid">
-                                <h2>$202</h2>
-                                <h3>OUR FEATURED OFFERS</h3>
-                                <h4>shop for <span>$50 +</span></h4>
-                                <div class="payment-cod">code <span> &nbsp; : &nbsp; citioct</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="paymant-offer-mian">
-                            <div>
-                                <img src="../assets/images/layout-6/payment-offer/1.png" alt="paymet-offer" class="img-fluid">
-                                <h2>$202</h2>
-                                <h3>OUR FEATURED OFFERS</h3>
-                                <h4>shop for <span>$50 +</span></h4>
-                                <div class="payment-cod">code <span> &nbsp; : &nbsp; citioct</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="paymant-offer-mian">
-                            <div>
-                                <img src="../assets/images/layout-6/payment-offer/2.png" alt="paymet-offer" class="img-fluid">
-                                <h2>$202</h2>
-                                <h3>OUR FEATURED OFFERS</h3>
-                                <h4>shop for <span>$50 +</span></h4>
-                                <div class="payment-cod">code <span> &nbsp; : &nbsp; citioct</span></div>
-                            </div>
-                        </div>
-                    </div>
+                   @endforeach
                 </div>
+
             </div>
+            
         </div>
     </div>
 </section>
 <!--payment offer end-->
 
+
+<?php 
+         $all_tranding_info = DB::table('tbl_tranding_items')
+                                   ->where('publication_status', 1)
+                                        ->limit(5)
+                                        ->get();
+                                        
+                                    ?>
 <!--title start-->
 <div class="title4 section-my-space">
     <h4>trending <span>product</span></h4>
 </div>
 <!--title end-->
-
 <!--product box start -->
 <section class=" ratio_asos product  section-big-pb-space">
     <div class="custom-container  addtocart_count ">
         <div class="row">
             <div class="col pr-0">
+                
                 <div class="product-slide-6 no-arrow">
+                    @foreach($all_tranding_info as $v_tranding)
                     <div>
                         <div class="product-box ">
                             <div class="product-imgbox">
                                 <div class="product-front">
-                                    <img src="../assets/images/layout-6/product/a1.jpg" class="img-fluid" alt="product">
+                                    <img src="{{$v_tranding->tranding_product_image}}" class="img-fluid" alt="product">
                                 </div>
                                 <div class="product-back">
-                                    <img src="../assets/images/layout-6/product/4.jpg" class="img-fluid" alt="product">
+                                    <img src="{{$v_tranding->tranding_product_image}}" class="img-fluid" alt="product">
                                 </div>
                                 <div class="product-icon">
                                     <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
@@ -470,9 +437,9 @@
                                     </a>
                                 </div>
                                 <div class="on-sale4">
-                                    on sale
+                                    
                                 </div>
-                                <div class="new-label1">50%</div>
+                                <div class="new-label1"></div>
                             </div>
                             <div class="product-detail detail-center1">
                                 <ul class="rating-star">
@@ -482,8 +449,8 @@
                                     <li><i class="fa fa-star"></i></li>
                                     <li><i class="fa fa-star"></i></li>
                                 </ul>
-                                <h6>Vaccinium cyanococcus .</h6>
-                                <span class="detail-price">$56.21<span>$24.00</span></span>
+                                <h6>{{$v_tranding->tranding_product_name }}</h6>
+                                <span class="detail-price">{{$v_tranding->tranding_product_oldprice}}<span>{{$v_tranding->tranding_product_name_new_price}}</span></span>
                             </div>
                             <div class="addtocart_btn">
                                 <button class="add-button add_cart" title="Add to cart">
@@ -503,340 +470,9 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="product-box ">
-                            <div class="product-imgbox">
-                                <div class="product-front">
-                                    <img src="../assets/images/layout-6/product/2.jpg" class="img-fluid" alt="product">
-                                </div>
-                                <div class="product-back">
-                                    <img src="../assets/images/layout-6/product/a2.jpg" class="img-fluid" alt="product">
-                                </div>
-                                <div class="product-icon">
-                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
-                                        <i class="ti-bag" ></i>
-                                    </button>
-                                    <a href="javascript:void(0)" title="Add to Wishlist">
-                                        <i class="ti-heart" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                        <i class="ti-search" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="compare.html" title="Compare">
-                                        <i class="fa fa-exchange" aria-hidden="true"></i>
-                                    </a>
 
-                                </div>
+                @endforeach
 
-                            </div>
-                            <div class="product-detail detail-center1">
-                                <ul class="rating-star">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                                <h6>Vaccinium cyanococcus .</h6>
-                                <span class="detail-price">$56.21<span>$24.00</span></span>
-                            </div>
-                            <div class="addtocart_btn">
-                                <button class="add-button add_cart" title="Add to cart">
-                                    add to cart
-                                </button>
-                                <div class="qty-box cart_qty">
-                                    <div class="input-group">
-                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
-                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                        </button>
-                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
-                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-box">
-                            <div class="product-imgbox">
-                                <div class="product-front">
-                                    <img src="../assets/images/layout-6/product/4.jpg" class="img-fluid" alt="product">
-                                </div>
-                                <div class="product-back">
-                                    <img src="../assets/images/layout-6/product/a4.jpg" class="img-fluid" alt="product">
-                                </div>
-                                <div class="product-icon">
-                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
-                                        <i class="ti-bag" ></i>
-                                    </button>
-                                    <a href="javascript:void(0)" title="Add to Wishlist">
-                                        <i class="ti-heart" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                        <i class="ti-search" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="compare.html" title="Compare">
-                                        <i class="fa fa-exchange" aria-hidden="true"></i>
-                                    </a>
-
-                                </div>
-                            </div>
-                            <div class="product-detail detail-center1">
-                                <ul class="rating-star">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                                <h6>Vaccinium cyanococcus .</h6>
-                                <span class="detail-price">$56.21<span>$24.00</span></span>
-                            </div>
-                            <div class="addtocart_btn">
-                                <button class="add-button add_cart" title="Add to cart">
-                                    add to cart
-                                </button>
-                                <div class="qty-box cart_qty">
-                                    <div class="input-group">
-                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
-                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                        </button>
-                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
-                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-box">
-                            <div class="product-imgbox">
-                                <div class="product-front">
-                                    <img src="../assets/images/layout-6/product/5.jpg" class="img-fluid" alt="product">
-                                </div>
-                                <div class="product-back">
-                                    <img src="../assets/images/layout-6/product/a5.jpg" class="img-fluid" alt="product">
-                                </div>
-                                <div class="product-icon">
-                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
-                                        <i class="ti-bag" ></i>
-                                    </button>
-                                    <a href="javascript:void(0)" title="Add to Wishlist">
-                                        <i class="ti-heart" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                        <i class="ti-search" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="compare.html" title="Compare">
-                                        <i class="fa fa-exchange" aria-hidden="true"></i>
-                                    </a>
-
-                                </div>
-                                <div class="on-sale4">
-                                    on sale
-                                </div>
-                                <div class="new-label1">50%</div>
-                            </div>
-                            <div class="product-detail detail-center1">
-                                <ul class="rating-star">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                                <h6>Vaccinium cyanococcus .</h6>
-                                <span class="detail-price">$56.21<span>$24.00</span></span>
-                            </div>
-                            <div class="addtocart_btn">
-                                <button class="add-button add_cart" title="Add to cart">
-                                    add to cart
-                                </button>
-                                <div class="qty-box cart_qty">
-                                    <div class="input-group">
-                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
-                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                        </button>
-                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
-                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-box">
-                            <div class="product-imgbox">
-                                <div class="product-front">
-                                    <img src="../assets/images/layout-6/product/6.jpg" class="img-fluid" alt="product">
-                                </div>
-                                <div class="product-back">
-                                    <img src="../assets/images/layout-6/product/a6.jpg" class="img-fluid" alt="product">
-                                </div>
-                                <div class="product-icon">
-                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
-                                        <i class="ti-bag" ></i>
-                                    </button>
-                                    <a href="javascript:void(0)" title="Add to Wishlist">
-                                        <i class="ti-heart" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                        <i class="ti-search" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="compare.html" title="Compare">
-                                        <i class="fa fa-exchange" aria-hidden="true"></i>
-                                    </a>
-
-                                </div>
-                            </div>
-                            <div class="product-detail detail-center1">
-                                <ul class="rating-star">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                                <h6>Vaccinium cyanococcus .</h6>
-                                <span class="detail-price">$56.21<span>$24.00</span></span>
-                            </div>
-                            <div class="addtocart_btn">
-                                <button class="add-button add_cart" title="Add to cart">
-                                    add to cart
-                                </button>
-                                <div class="qty-box cart_qty">
-                                    <div class="input-group">
-                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
-                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                        </button>
-                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
-                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-box">
-                            <div class="product-imgbox">
-                                <div class="product-front">
-                                    <img src="../assets/images/layout-6/product/3.jpg" class="img-fluid" alt="product">
-                                </div>
-                                <div class="product-back">
-                                    <img src="../assets/images/layout-6/product/a3.jpg" class="img-fluid" alt="product">
-                                </div>
-                                <div class="product-icon">
-                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
-                                        <i class="ti-bag" ></i>
-                                    </button>
-                                    <a href="javascript:void(0)" title="Add to Wishlist">
-                                        <i class="ti-heart" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                        <i class="ti-search" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="compare.html" title="Compare">
-                                        <i class="fa fa-exchange" aria-hidden="true"></i>
-                                    </a>
-
-                                </div>
-                            </div>
-                            <div class="product-detail detail-center1">
-                                <ul class="rating-star">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                                <h6>Vaccinium cyanococcus .</h6>
-                                <span class="detail-price">$56.21<span>$24.00</span></span>
-                            </div>
-                            <div class="addtocart_btn">
-                                <button class="add-button add_cart" title="Add to cart">
-                                    add to cart
-                                </button>
-                                <div class="qty-box cart_qty">
-                                    <div class="input-group">
-                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
-                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                        </button>
-                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
-                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-box">
-                            <div class="product-imgbox">
-                                <div class="product-front">
-                                    <img src="../assets/images/layout-6/product/5.jpg" class="img-fluid" alt="product">
-                                </div>
-                                <div class="product-back">
-                                    <img src="../assets/images/layout-6/product/a5.jpg" class="img-fluid" alt="product">
-                                </div>
-                                <div class="product-icon">
-                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
-                                        <i class="ti-bag" ></i>
-                                    </button>
-                                    <a href="javascript:void(0)" title="Add to Wishlist">
-                                        <i class="ti-heart" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                        <i class="ti-search" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="compare.html" title="Compare">
-                                        <i class="fa fa-exchange" aria-hidden="true"></i>
-                                    </a>
-
-                                </div>
-                                <div class="new-label1">50%</div>
-                                <div class="on-sale4">
-                                    on sale
-                                </div>
-                                <div class="new-label1">50%</div>
-                            </div>
-                            <div class="product-detail detail-center1">
-                                <ul class="rating-star">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                                <h6>Vaccinium cyanococcus .</h6>
-                                <span class="detail-price">$56.21<span>$24.00</span></span>
-                            </div>
-                            <div class="addtocart_btn">
-                                <button class="add-button add_cart" title="Add to cart">
-                                    add to cart
-                                </button>
-                                <div class="qty-box cart_qty">
-                                    <div class="input-group">
-                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
-                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                        </button>
-                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
-                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -3263,18 +2899,25 @@
 </section>
 <!-- product tab end -->
 
-
+<?php 
+                                    $all_SpecialOffer_info = DB::table('tbl_SpecialOffer')
+                                        ->where('publication_status', 1)
+                                        ->limit(1)
+                                        ->get();
+                                        
+                                    ?>
+ @foreach($all_SpecialOffer_info as $v_SpecialOffer)                                   
 <!-- Parallax banner -->
 <section class="section-big-pt-space">
     <div class="full-banner parallax text-left p-left">
-        <img src="../assets/images/layout-6/parallax-banner/parelex.jpg" alt="" class="bg-img ">
+        <img src="{{URL::to($v_SpecialOffer->special_offer_logot)}}" alt="" class="bg-img ">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="banner-contain">
-                        <h2>2019</h2>
-                        <h3>food market</h3>
-                        <h4>special offer</h4>
+                        <h2>{{$v_SpecialOffer->special_offer_date}}</h2>
+                        <h3>{{$v_SpecialOffer->special_offer}}</h3>
+                        <h4>{{$v_SpecialOffer->special_offer_discount}}</h4>
                     </div>
                 </div>
             </div>
@@ -3282,7 +2925,7 @@
     </div>
 </section>
 <!-- Parallax banner end -->
-
+@endforeach
 <!--title start-->
 <div class="title4 section-my-space mt-0">
     <h4>letest <span>blog</span></h4>

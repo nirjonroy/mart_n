@@ -452,6 +452,7 @@ Route::group(['as'=>'editor.', 'prefix'=>'editor', 'namespace'=>'editor','middle
     // product uploading
      Route::get('seller/product/add','ProductManageController@productadd');
      Route::post('seller/new/product/upload','ProductManageController@productupload');
+    // tranding item
      
     
 });
@@ -466,3 +467,28 @@ Route::group(['middleware'=>['auth']], function(){
     Route::get('password/change', 'ChangePassController@index');
     Route::post('password/updated', 'ChangePassController@updated');
 });
+//tranding item. 
+Route::get('add-tranding', 'trandingControllert@index');
+Route::post('save-tranding', 'trandingControllert@save_tranding');
+Route::get('all-tranding', 'trandingControllert@all_tranding');
+Route::get('unactive_tranding/{tranding_id}', 'trandingControllert@unactive_tranding');
+Route::get('active_tranding/{tranding_id}', 'trandingControllert@active_tranding');
+Route::get('delete_tranding/{tranding_id}', 'trandingControllert@delete_tranding');
+// Route::get('edit_manufacture/{manufacture_id}', 'manufactureController@edit_manufacture');
+// Route::post('/update-manufacture/{manufacture_id}','manufactureController@update_manufactur
+
+// payment offer
+Route::get('add-PaymentOffer', 'PaymentOfferController@index');
+Route::post('save-PaymentOffer', 'PaymentOfferController@save_PaymentOffer');
+Route::get('all-PaymentOffer', 'PaymentOfferController@all_PaymentOffer');
+Route::get('unactive_PaymentOffer/{payment_offer_id}', 'PaymentOfferController@unactive_PaymentOffer');
+Route::get('active_PaymentOffer/{payment_offer_id}', 'PaymentOfferController@active_PaymentOffer');
+Route::get('delete_PaymentOffer/{payment_offer_id}', 'PaymentOfferController@delete_PaymentOffer');
+
+// specialoffer
+Route::get('add-SpecialOffer', 'SpecialOfferController@index');
+Route::post('save-SpecialOffer', 'SpecialOfferController@save_SpecialOffer');
+Route::get('all-SpecialOffer', 'SpecialOfferController@all_SpecialOffer');
+Route::get('unactive_SpecialOfferr/{special_offer_id}', 'SpecialOfferController@unactive_SpecialOffer');
+Route::get('active_SpecialOffer/{special_offer_id}', 'SpecialOfferController@active_SpecialOffer');
+Route::get('delete_SpecialOffer/{special_offer_id}', 'SpecialOfferController@delete_SpecialOffer');

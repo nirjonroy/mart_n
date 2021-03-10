@@ -572,7 +572,82 @@
             </ul>
           </li>
           <!-- nav item end -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fa fa-coffee"></i>
+              <p>
+                Tranding Items
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('add-tranding')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Add </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('all-tranding')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Manage</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- nav item end -->
 
+          <!-- nav item end -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fa fa-coffee"></i>
+              <p>
+                Payment Offer
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('add-PaymentOffer')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Add </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('all-PaymentOffer')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Manage</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- nav item end -->
+
+           <!-- nav item end -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fa fa-coffee"></i>
+              <p>
+                Special Offer
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('add-SpecialOffer')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Add </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('all-SpecialOffer')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Manage</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- nav item end -->
       </nav>
       <!-- /.sidebar-menu -->
     </div>

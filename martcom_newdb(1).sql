@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Feb 26, 2021 at 07:58 PM
--- Server version: 10.2.36-MariaDB
--- PHP Version: 7.3.26
+-- Host: 127.0.0.1
+-- Generation Time: Mar 10, 2021 at 07:58 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `martcom_newDB`
+-- Database: `martcom_newdb`
 --
 
 -- --------------------------------------------------------
@@ -390,14 +390,14 @@ CREATE TABLE `customers` (
   `id` int(10) UNSIGNED NOT NULL,
   `fullName` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phoneNumber` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `passResetToken` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `verifyToken` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `mypoint` int(11) DEFAULT 0,
+  `mypoint` int(11) DEFAULT '0',
   `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'public/uploads/avatar/avatar.png',
-  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `status` tinyint(4) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -544,7 +544,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (40, '2020_02_18_112400_create_offers_table', 1),
 (41, '2020_02_25_171242_create_bundles_table', 1),
 (42, '2020_03_14_162024_create_coupon_useds_table', 1),
-(43, '2019_12_23_100454_create_sellers_table', 2);
+(43, '2019_12_23_100454_create_sellers_table', 2),
+(46, '2021_03_05_224715_create_tbl_tranding_items_tablle', 3),
+(47, '2021_03_08_221531_create_tbl__payment_offer_table', 4),
+(49, '2021_03_09_235517_create_tbl__special_offer_table', 5);
 
 -- --------------------------------------------------------
 
@@ -698,7 +701,7 @@ CREATE TABLE `ordershippings` (
   `customerid` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `houseaddress` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `fulladdress` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `zipcode` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `zipcode` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -770,8 +773,8 @@ CREATE TABLE `paymentsaves` (
   `paymentIdPrimary` int(10) UNSIGNED NOT NULL,
   `orderId` int(11) NOT NULL,
   `paymentType` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cPaynumber` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `cPaytrxid` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cPaynumber` text COLLATE utf8mb4_unicode_ci,
+  `cPaytrxid` text COLLATE utf8mb4_unicode_ci,
   `paymentStatus` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pending',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -974,7 +977,9 @@ INSERT INTO `productcolors` (`id`, `product_id`, `color_id`, `created_at`, `upda
 (148, 119, 7, '2021-01-29 06:31:03', '2021-01-29 06:31:03'),
 (149, 119, 9, '2021-01-29 06:31:03', '2021-01-29 06:31:03'),
 (150, 119, 13, '2021-01-29 06:31:03', '2021-01-29 06:31:03'),
-(151, 119, 14, '2021-01-29 06:31:03', '2021-01-29 06:31:03');
+(151, 119, 14, '2021-01-29 06:31:03', '2021-01-29 06:31:03'),
+(152, 132, 2, '2021-03-06 05:00:47', '2021-03-06 05:00:47'),
+(153, 133, 2, '2021-03-06 05:01:17', '2021-03-06 05:01:17');
 
 -- --------------------------------------------------------
 
@@ -1248,7 +1253,9 @@ INSERT INTO `productimages` (`id`, `product_id`, `image`, `created_at`, `updated
 (259, 128, 'public/uploads/product/128-142080466_124028432913317_4240236658160898349_o.jpg', '2021-01-31 09:00:35', '2021-01-31 09:00:35'),
 (260, 129, 'public/uploads/product/129-141968504_124028199580007_3430851328858769015_o.jpg', '2021-01-31 09:00:46', '2021-01-31 09:00:46'),
 (261, 130, 'public/uploads/product/130-141723218_124028319579995_6017502123620500950_o.jpg', '2021-01-31 09:00:58', '2021-01-31 09:00:58'),
-(262, 131, 'public/uploads/product/131-141723004_124028402913320_1872397941903709842_o.jpg', '2021-01-31 09:01:12', '2021-01-31 09:01:12');
+(262, 131, 'public/uploads/product/131-141723004_124028402913320_1872397941903709842_o.jpg', '2021-01-31 09:01:12', '2021-01-31 09:01:12'),
+(263, 132, 'public/uploads/product/132-mampyjhggf.JPG', '2021-03-06 05:00:47', '2021-03-06 05:00:47'),
+(264, 133, 'public/uploads/product/133-mampyjhggf.JPG', '2021-03-06 05:01:16', '2021-03-06 05:01:16');
 
 -- --------------------------------------------------------
 
@@ -1273,7 +1280,7 @@ CREATE TABLE `products` (
   `featureproductdate` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `productstyle` tinyint(4) DEFAULT NULL,
   `productdetails` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `productdetails2` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `productdetails2` longtext COLLATE utf8mb4_unicode_ci,
   `productquantity` int(11) NOT NULL,
   `sellerid` int(11) NOT NULL,
   `request` tinyint(4) NOT NULL,
@@ -1395,7 +1402,8 @@ INSERT INTO `products` (`id`, `productcat`, `productsubcat`, `productchildcat`, 
 (128, 7, 14, 18, 6, 'valentine day t-shirt', 'valentine-day-t-shirt', 6, 375, 400, NULL, NULL, NULL, NULL, NULL, '<p>❤️Item: Couple T-Shirt<br>❤️Fabric: 100% cotton<br>❤️Description: Chest printed Crew/Round Neck Tee Shirt.<br>❤️Color : White 🤍 / Black 🖤<br>❤️Size: M,L,XL (Asian measurement)<br></p>', '<p>আসছে ১৪ই ফেব্রুইয়ারি ২০২১।<br>  ❤️❤️\"Valentine\'s Day\"❤️❤️<br>তথা ভালোবাসা দিবস কে স্মরণীয় করে রাখতে ভালোবাসার মানুষদের জন্য আমরা নিয়ে এসেছি আপনার মনের কথা বলার পোশাক।<br></p>', 1000, 23, 1, 1, '2021-01-31 09:00:34', '2021-02-01 12:04:58'),
 (129, 7, 14, 18, 6, 'valentine day t-shirt', 'valentine-day-t-shirt', 6, 375, 400, NULL, NULL, NULL, NULL, NULL, '<p>❤️Item: Couple T-Shirt<br>❤️Fabric: 100% cotton<br>❤️Description: Chest printed Crew/Round Neck Tee Shirt.<br>❤️Color : White 🤍 / Black 🖤<br>❤️Size: M,L,XL (Asian measurement)<br></p>', '<p>আসছে ১৪ই ফেব্রুইয়ারি ২০২১।<br>  ❤️❤️\"Valentine\'s Day\"❤️❤️<br>তথা ভালোবাসা দিবস কে স্মরণীয় করে রাখতে ভালোবাসার মানুষদের জন্য আমরা নিয়ে এসেছি আপনার মনের কথা বলার পোশাক।<br></p>', 1000, 23, 1, 1, '2021-01-31 09:00:46', '2021-02-01 12:04:58'),
 (130, 7, 14, 18, 6, 'valentine day t-shirt', 'valentine-day-t-shirt', 6, 375, 400, NULL, NULL, NULL, NULL, NULL, '<p>❤️Item: Couple T-Shirt<br>❤️Fabric: 100% cotton<br>❤️Description: Chest printed Crew/Round Neck Tee Shirt.<br>❤️Color : White 🤍 / Black 🖤<br>❤️Size: M,L,XL (Asian measurement)<br></p>', '<p>আসছে ১৪ই ফেব্রুইয়ারি ২০২১।<br>  ❤️❤️\"Valentine\'s Day\"❤️❤️<br>তথা ভালোবাসা দিবস কে স্মরণীয় করে রাখতে ভালোবাসার মানুষদের জন্য আমরা নিয়ে এসেছি আপনার মনের কথা বলার পোশাক।<br></p>', 1000, 23, 1, 1, '2021-01-31 09:00:58', '2021-02-01 12:04:58'),
-(131, 7, 14, 18, 6, 'valentine day t-shirt', 'valentine-day-t-shirt', 6, 375, 400, NULL, NULL, NULL, NULL, NULL, '<p>❤️Item: Couple T-Shirt<br>❤️Fabric: 100% cotton<br>❤️Description: Chest printed Crew/Round Neck Tee Shirt.<br>❤️Color : White 🤍 / Black 🖤<br>❤️Size: M,L,XL (Asian measurement)<br></p>', '<p>আসছে ১৪ই ফেব্রুইয়ারি ২০২১।<br>  ❤️❤️\"Valentine\'s Day\"❤️❤️<br>তথা ভালোবাসা দিবস কে স্মরণীয় করে রাখতে ভালোবাসার মানুষদের জন্য আমরা নিয়ে এসেছি আপনার মনের কথা বলার পোশাক।<br></p>', 1000, 23, 1, 1, '2021-01-31 09:01:12', '2021-02-01 12:04:58');
+(131, 7, 14, 18, 6, 'valentine day t-shirt', 'valentine-day-t-shirt', 6, 375, 400, NULL, NULL, NULL, NULL, NULL, '<p>❤️Item: Couple T-Shirt<br>❤️Fabric: 100% cotton<br>❤️Description: Chest printed Crew/Round Neck Tee Shirt.<br>❤️Color : White 🤍 / Black 🖤<br>❤️Size: M,L,XL (Asian measurement)<br></p>', '<p>আসছে ১৪ই ফেব্রুইয়ারি ২০২১।<br>  ❤️❤️\"Valentine\'s Day\"❤️❤️<br>তথা ভালোবাসা দিবস কে স্মরণীয় করে রাখতে ভালোবাসার মানুষদের জন্য আমরা নিয়ে এসেছি আপনার মনের কথা বলার পোশাক।<br></p>', 1000, 23, 1, 1, '2021-01-31 09:01:12', '2021-02-01 12:04:58'),
+(132, 1, 3, 0, 1, 'macbook pro', 'macbook-pro', 92, 100000, 1200000, NULL, '83137248', 400, NULL, 2, '<p><b>hghghkjj</b><br></p>', '<blockquote><p>;lkl;;l<br></p></blockquote>', 1100, 12, 1, 1, '2021-03-06 05:00:44', '2021-03-06 05:00:44');
 
 -- --------------------------------------------------------
 
@@ -1465,7 +1473,9 @@ INSERT INTO `productsizes` (`id`, `product_id`, `size_id`, `created_at`, `update
 (47, 121, 10, '2021-01-31 09:05:19', '2021-01-31 09:05:19'),
 (48, 122, 1, '2021-01-31 09:05:32', '2021-01-31 09:05:32'),
 (49, 122, 9, '2021-01-31 09:05:32', '2021-01-31 09:05:32'),
-(50, 122, 10, '2021-01-31 09:05:32', '2021-01-31 09:05:32');
+(50, 122, 10, '2021-01-31 09:05:32', '2021-01-31 09:05:32'),
+(51, 132, 7, '2021-03-06 05:00:47', '2021-03-06 05:00:47'),
+(52, 133, 7, '2021-03-06 05:01:17', '2021-03-06 05:01:17');
 
 -- --------------------------------------------------------
 
@@ -1493,7 +1503,7 @@ CREATE TABLE `reviews` (
   `customer_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ratting` tinyint(4) NOT NULL,
   `review` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` tinyint(4) NOT NULL DEFAULT 0,
+  `status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1595,7 +1605,7 @@ CREATE TABLE `shippings` (
   `area` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `stateaddress` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `customerid` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `houseaddress` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `houseaddress` text COLLATE utf8mb4_unicode_ci,
   `fulladdress` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `zipcode` varchar(155) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -1669,8 +1679,8 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `image`, `link`, `status`, `created_at`, `updated_at`) VALUES
-(16, 'public/uploads/slider/1612185351-Untitled-1.jpg', 'https://mart9294.com/category/home-&-lifestyle/7', 1, '2021-02-01 12:04:46', '2021-02-24 16:27:21'),
-(18, 'public/uploads/slider/1612265788-Untitled-1 gg.jpg', 'https://mart9294.com/subcategory/shari/8', 1, '2021-02-01 14:04:36', '2021-02-02 11:36:28'),
+(16, 'public/uploads/slider/1612185351-Untitled-1.jpg', 'https://mart9294.com/category/home-&-lifestyle/7', 0, '2021-02-01 12:04:46', '2021-03-05 04:15:34'),
+(18, 'public/uploads/slider/1612265788-Untitled-1 gg.jpg', 'https://mart9294.com/subcategory/shari/8', 0, '2021-02-01 14:04:36', '2021-03-05 04:16:13'),
 (19, 'public/uploads/slider/1612293891-Mart Cover photo.png', 'https://mart9294.com/', 1, '2021-02-02 16:42:16', '2021-02-02 19:24:51');
 
 -- --------------------------------------------------------
@@ -1759,6 +1769,79 @@ CREATE TABLE `tags` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_paymentoffer`
+--
+
+CREATE TABLE `tbl_paymentoffer` (
+  `payment_offer_id` int(10) UNSIGNED NOT NULL,
+  `payment_offer_logo` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payment_offer_short_description` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payment_offer` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `publicatio_status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tbl_paymentoffer`
+--
+
+INSERT INTO `tbl_paymentoffer` (`payment_offer_id`, `payment_offer_logo`, `payment_offer_short_description`, `payment_offer`, `publicatio_status`, `created_at`, `updated_at`) VALUES
+(1, 'payment_offer_img/668.png', 'shop for BDT 200', 'Our Featured Offer', '1', NULL, NULL),
+(2, 'payment_offer_img/310.png', 'roket', 'shop  fo 400 BDT', '1', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_specialoffer`
+--
+
+CREATE TABLE `tbl_specialoffer` (
+  `special_offer_id` int(10) UNSIGNED NOT NULL,
+  `special_offer_date` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `special_offer_discount` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `special_offer` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `special_offer_logot` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `publication_status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tbl_specialoffer`
+--
+
+INSERT INTO `tbl_specialoffer` (`special_offer_id`, `special_offer_date`, `special_offer_discount`, `special_offer`, `special_offer_logot`, `publication_status`, `created_at`, `updated_at`) VALUES
+(1, '2021', '60%', 'jhhbjh', 'special_offer_img/90.png', '1', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_tranding_items`
+--
+
+CREATE TABLE `tbl_tranding_items` (
+  `tranding_id` int(10) UNSIGNED NOT NULL,
+  `tranding_product_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tranding_product_oldprice` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tranding_product_name_new_price` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tranding_product_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `publication_status` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tbl_tranding_items`
+--
+
+INSERT INTO `tbl_tranding_items` (`tranding_id`, `tranding_product_name`, `tranding_product_oldprice`, `tranding_product_name_new_price`, `tranding_product_image`, `publication_status`, `created_at`, `updated_at`) VALUES
+(1, 't-shirt', '500', '300', 'trending_imgs/925.jpg', 1, NULL, NULL),
+(4, 'Shirt', '1500', '1200', 'trending_imgs/533.jpg', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2053,6 +2136,24 @@ ALTER TABLE `tags`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_paymentoffer`
+--
+ALTER TABLE `tbl_paymentoffer`
+  ADD PRIMARY KEY (`payment_offer_id`);
+
+--
+-- Indexes for table `tbl_specialoffer`
+--
+ALTER TABLE `tbl_specialoffer`
+  ADD PRIMARY KEY (`special_offer_id`);
+
+--
+-- Indexes for table `tbl_tranding_items`
+--
+ALTER TABLE `tbl_tranding_items`
+  ADD PRIMARY KEY (`tranding_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -2123,7 +2224,7 @@ ALTER TABLE `colors`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `couponcodes`
@@ -2165,13 +2266,13 @@ ALTER TABLE `locations`
 -- AUTO_INCREMENT for table `logos`
 --
 ALTER TABLE `logos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -2219,25 +2320,25 @@ ALTER TABLE `paymentsaves`
 -- AUTO_INCREMENT for table `productcolors`
 --
 ALTER TABLE `productcolors`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
 
 --
 -- AUTO_INCREMENT for table `productimages`
 --
 ALTER TABLE `productimages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=263;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=265;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT for table `productsizes`
 --
 ALTER TABLE `productsizes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `producttags`
@@ -2291,7 +2392,7 @@ ALTER TABLE `sliders`
 -- AUTO_INCREMENT for table `socialmedia`
 --
 ALTER TABLE `socialmedia`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `social_providers`
@@ -2312,10 +2413,28 @@ ALTER TABLE `tags`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `tbl_paymentoffer`
+--
+ALTER TABLE `tbl_paymentoffer`
+  MODIFY `payment_offer_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tbl_specialoffer`
+--
+ALTER TABLE `tbl_specialoffer`
+  MODIFY `special_offer_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tbl_tranding_items`
+--
+ALTER TABLE `tbl_tranding_items`
+  MODIFY `tranding_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

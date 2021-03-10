@@ -175,15 +175,8 @@
                                         </li>
                                         <!--HOME-->
                                         <li>
-                                            <a href="#">Home</a>
-                                            <ul>
-                                                <li><a target="_blank" href="index.html">layout 1</a></li>
-                                                <li><a target="_blank" href="layout-2.html">layout 2</a></li>
-                                                <li><a target="_blank" href="layout-3.html">layout 3</a></li>
-                                                <li><a target="_blank" href="layout-4.html">layout 4</a></li>
-                                                <li><a target="_blank" href="layout-5.html">layout 5</a></li>
-                                                <li><a target="_blank" href="layout-6.html">layout 6</a></li>
-                                            </ul>
+                                            <a href="{{url('/')}}">Home</a>
+                                           
                                         </li>
                                         <!--HOME-END-->
 
