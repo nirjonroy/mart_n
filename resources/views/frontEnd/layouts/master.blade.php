@@ -42,11 +42,11 @@
 <body class="bg-light">
 
 <!-- loader start -->
-<div class="loader-wrapper">
+<!-- <div class="loader-wrapper">
     <div>
-        <img src={{asset("public/frotend/assets/images/vagitable-loader.gif")}} alt="loader" class="img-fluid">
+        <img src={{asset("public/frotend/images/Nir.png")}} alt="loader" class="img-fluid">
     </div>
-</div>
+</div> -->
 <!-- loader end -->
 
 <!--header start-->
@@ -182,130 +182,12 @@
 
                                         <!--SHOP-->
                                         <li>
-                                            <a href="#">shop</a>
-                                            <ul>
-                                                <li><a href="category-page(left-sidebar).html">left sidebar</a></li>
-                                                <li><a href="category-page(right-sidebar).html">right sidebar</a></li>
-                                                <li><a href="category-page(no-sidebar).html">no sidebar</a></li>
-                                                <li><a href="category-page(sidebar-popup).html">sidebar popup</a></li>
-                                                <li><a href="category-page(metro).html">metro <span class="new-tag">new</span></a></li>
-                                                <li><a href="category-page(full-width).html">full width <span class="new-tag">new</span></a></li>
-                                                <li><a href="category-page(infinite-scroll).html">infinite scroll</a></li>
-                                                <li><a href=category-page(3-grid).html>3 grid</a></li>
-                                                <li><a href="category-page(6-grid).html">6 grid</a></li>
-                                                <li><a href="category-page(list-view).html">list view</a></li>
-                                            </ul>
+                                            <a href="{{url('shops')}}">shop</a>
+                                            
                                         </li>
                                         <!--SHOP-END-->
                                         <!--product-meu start-->
-                                        <li class="mega" id="hover-cls"><a href="#">product
-                                        </a>
-                                            <ul class="mega-menu full-mega-menu ">
-                                                <li>
-                                                    <div class="container">
-                                                        <div class="row">
-                                                            <div class="col mega-box">
-                                                                <div class="link-section">
-                                                                    <div class="menu-title">
-                                                                        <h5>sidebar</h5>
-                                                                    </div>
-                                                                    <div class="menu-content">
-                                                                        <ul>
-                                                                            <li><a href="product-page(left-sidebar).html">left sidebar</a></li>
-                                                                            <li><a href="product-page(right-sidebar).html">right sidebar</a></li>
-                                                                            <li><a href="product-page(no-sidebar).html">non sidebar</a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col mega-box">
-                                                                <div class="link-section">
-                                                                    <div class="menu-title">
-                                                                        <h5>bonus layout</h5>
-                                                                    </div>
-                                                                    <div class="menu-content">
-                                                                        <ul>
-                                                                            <li><a href="product-page(bundle).html">bundle</a></li>
-                                                                            <li><a href="product-page(image-swatch).html">image swatch</a></li>
-                                                                            <li><a href="product-page(vertical-tab).html">vertical tab</a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col mega-box">
-                                                                <div class="link-section">
-                                                                    <div class="menu-title">
-                                                                        <h5>product layout <span class="new-tag">new</span></h5>
-                                                                    </div>
-                                                                    <div class="menu-content">
-                                                                        <ul>
-                                                                            <li><a href="product-page(4-image).html">4 image </a></li>
-                                                                            <li><a href="product-page(sticky).html">sticky</a></li>
-                                                                            <li><a href="product-page(accordian).html">accordian</a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col mega-box">
-                                                                <div class="link-section">
-                                                                    <div class="menu-title">
-                                                                        <h5>thumbnail image</h5>
-                                                                    </div>
-                                                                    <div class="menu-content">
-                                                                        <ul>
-                                                                            <li><a href="product-page(left-image).html">left image</a></li>
-                                                                            <li><a href="product-page(right-image).html">right image</a></li>
-                                                                            <li><a href="product-page(image-outside).html">image outside</a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col mega-box">
-                                                                <div class="link-section">
-                                                                    <div class="menu-title">
-                                                                        <h5>3 column</h5>
-                                                                    </div>
-                                                                    <div class="menu-content">
-                                                                        <ul>
-                                                                            <li><a href="product-page(3-col-left).html">thumbnail left</a></li>
-                                                                            <li><a href="product-page(3-col-right).html">thumbnail right</a></li>
-                                                                            <li><a href="product-page(3-column).html">thubnail bottom</a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col mega-box">
-                                                                <div class="link-section">
-                                                                    <div class="menu-title">
-                                                                        <h5>product element</h5>
-                                                                    </div>
-                                                                    <div class="menu-content">
-                                                                        <ul>
-                                                                            <li><a href="element-productbox.html">product box</a></li>
-                                                                            <li><a href="element-product-slider.html">product slider</a></li>
-                                                                            <li><a href="element-no_slider.html">no slider</a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row menu-banner">
-                                                            <div class="col-lg-6">
-                                                                <div>
-                                                                    <img src="../assets/images/1_menu-banner1.jpg" alt="menu-banner" class="img-fluid">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-6">
-                                                                <div>
-                                                                    <img src="../assets/images/1_menu-banner2.jpg" alt="menu-banner" class="img-fluid">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--product-meu end-->
+                                       >
 
                                         <!--mega-meu start-->
                                         <li class="mega" >
@@ -513,7 +395,7 @@
                                         <ul class="nav-cat title-font mt-0">
                                         @foreach($categories as $category)
                                             <li> <img src="{{$category->image}}")}} alt="category-product"> <a href="{{url('category/'.$category->slug.'/'.$category->id)}}">{{$category->catname}}</a></li>
-                                                   
+                                                       
                                             @endforeach  
                                             
                                         </ul>
@@ -530,9 +412,9 @@
                                             <input type="text" class="form-control" placeholder="Search a Product" >
                                             <div class="input-group-prepend">
                                                 <select>
-                                                    <option>All Category</option>
-                                                    <option>indurstrial</option>
-                                                    <option>sports</option>
+                                                    @foreach($categories as $category)
+                                                    <option><a href="{{url('category/'.$category->slug.'/'.$category->id)}}">{{$category->catname}}</a></option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
@@ -943,7 +825,7 @@
                             </div>
                             <div class="product-description border-product">
                                 <div class="size-box">
-                                    <ul>
+                                      <ul>
                                         <li class="active"><a href="#">s</a></li>
                                         <li><a href="#">m</a></li>
                                         <li><a href="#">l</a></li>
@@ -1130,7 +1012,7 @@
 <!-- Add to setting bar end-->
 
  <!-- notification product -->
-  <div class="product-notification" id="dismiss">
+  <!-- <div class="product-notification" id="dismiss">
     <span  onclick="dismiss();" class="close" aria-hidden="true">×</span>
     <div class="media">
       <img class="mr-2" src="../assets/images/layout-6/product/5.jpg" alt="Generic placeholder image">
@@ -1139,7 +1021,7 @@
         Cras sit amet nibh libero, in gravida nulla.
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- notification product -->
 
 

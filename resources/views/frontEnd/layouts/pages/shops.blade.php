@@ -10,7 +10,7 @@
               <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-6">
                   <div id="hidemenu" class="hidemenu sidebar-menu">
-                    @include('frontEnd.layouts.includes.sidebar')
+                    
                   </div>
                 </div>
               </div>
@@ -24,26 +24,66 @@
     </div>
   </section>
   <!-- bredcrumb end -->
-  <section class="common-design">
+  <!-- breadcrumb start -->
+<div class="breadcrumb-main ">
     <div class="container">
-      <div class="row">
-        @foreach($shops as $key=>$value)
-          <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="shop-thumb">
-              <a href="{{url('vandorshop/'.$value->slug.'/'.$value->id)}}">
-                <div class="image">
-                  <img src="{{asset($value->shoplogo)}}" alt="">
+        <div class="row">
+            <div class="col">
+                <div class="breadcrumb-contain">
+                    <div>
+                        <h2>Shop</h2>
+                        <ul>
+                            <li><a href="#">home</a></li>
+                            <li><i class="fa fa-angle-double-right"></i></li>
+                            <li><a href="#">All Shop</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="text">
-                  <p>{{$value->shopname}}</p>
-                </div>
-              </a>
             </div>
-          </div>
-          <!-- col 2 end -->
-          @endforeach
         </div>
-     </div>
     </div>
-  </section>
+</div>
+<!-- breadcrumb End -->
+
+<!-- main section start -->
+<section class="section-big-pt-space bg-light">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-t-space portfolio-section portfolio-padding metro-section port-col">
+                    <div class="isotopeContainer row metro-block">
+                      @foreach($shops as $key=>$value)
+                        <div class="col-xl-3 col-lg-4 col-sm-6 isotopeSelector">
+                            <div class="product">
+                                <div class="product-box">
+                                   <a href="{{url('vandorshop/'.$value->slug.'/'.$value->id)}}">
+                                    <div class="product-imgbox">
+                                        <div class="product-front">
+                                            <img src="{{asset($value->shoplogo)}}" class="img-fluid  " alt="product">
+                                        </div>
+                                        
+                                        <div class="product-detail">
+                                            <a href="product-page(no-sidebar).html">
+                                                <h6>{{$value->shopname}}</h6>
+                                            </a>
+                                            
+                                        </div>
+                                    </div>
+                                  </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        @endforeach
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- main section end -->
+
 @endsection

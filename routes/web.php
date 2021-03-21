@@ -492,3 +492,11 @@ Route::get('all-SpecialOffer', 'SpecialOfferController@all_SpecialOffer');
 Route::get('unactive_SpecialOfferr/{special_offer_id}', 'SpecialOfferController@unactive_SpecialOffer');
 Route::get('active_SpecialOffer/{special_offer_id}', 'SpecialOfferController@active_SpecialOffer');
 Route::get('delete_SpecialOffer/{special_offer_id}', 'SpecialOfferController@delete_SpecialOffer');
+
+// masonary_banar
+Route::get('add-MasonaryBanar', 'MasonaryBanarController@index');
+Route::post('save-masonary', 'MasonaryBanarController@save_masonary');
+Route::get('all-MasonaryBanar', 'MasonaryBanarController@all_masonary');
+Route::get('unactive_MasonaryBanar/{masonary_id}', 'MasonaryBanarController@unactive_MasonaryBanar');
+Route::get('active_MasonaryBanar/{masonary_id}', 'MasonaryBanarController@active_MasonaryBanar');
+Route::get('delete_MasonaryBanar/{masonary_id}', 'MasonaryBanarController@delete_MasonaryBanar');

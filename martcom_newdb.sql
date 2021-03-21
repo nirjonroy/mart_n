@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2021 at 07:58 PM
+-- Generation Time: Mar 21, 2021 at 04:27 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -427,7 +427,8 @@ INSERT INTO `customers` (`id`, `fullName`, `phoneNumber`, `address`, `email`, `p
 (28, 'আতিক আকন্দ', '01714462655', NULL, 'atik_lks@yahoocom', '$2y$10$OsrrLI4pWvGJayUHfsLH7ewjMrIMQkIPIMjn5rY7C7QzGEorFqmUK', NULL, '895762', 0, 'public/uploads/avatar/avatar.png', 1, '2021-01-07 19:55:01', '2021-01-07 19:55:01'),
 (29, 'Nayem Ahamed', '01775016964', 'rod 10/a house 19 dhanmondi dhaka', 'nayemahamed4500@gmail.com', '$2y$10$ieN/JWqVCp7d1105b9yM4.QtynGCq/MO5tg05uGizsg5A56EDbD5S', NULL, '1', 0, 'public/uploads/image/1610098721-112319.jpg', 1, '2021-01-08 09:32:09', '2021-02-20 17:23:41'),
 (30, 'Rezwanur Rab Zia', '01911888888', NULL, 'rezwan@mail.com', '$2y$10$TYoG63e390jFTVyQAMOAvObJKuxn0KU9gTrI364H1fSb7mDLRk.au', NULL, '1', 0, 'public/uploads/avatar/avatar.png', 1, '2021-02-01 14:22:07', '2021-02-02 06:27:44'),
-(31, 'Nirjon Roy', '01774865115', NULL, 'roynirjon18@gmail.com', '$2y$10$4afxRww4hZ7f8DEYsO7iR.bi9RBVHOO7ycwEUjUM9.6G2z3dnbYfK', NULL, '239958', 0, 'public/uploads/avatar/avatar.png', 1, '2021-02-18 13:57:07', '2021-02-18 13:57:07');
+(31, 'Nirjon Roy', '01774865115', NULL, 'roynirjon18@gmail.com', '$2y$10$4afxRww4hZ7f8DEYsO7iR.bi9RBVHOO7ycwEUjUM9.6G2z3dnbYfK', NULL, '239958', 0, 'public/uploads/avatar/avatar.png', 1, '2021-02-18 13:57:07', '2021-02-18 13:57:07'),
+(32, 'abul hossain', '878', NULL, 'ab@gm.com', '$2y$10$qLwkIzdBU/W6.mvUlQDnAu0mmWANcVqg/7g3Sb53dQYRQW8nOFIHm', NULL, '741923', 0, 'public/uploads/avatar/avatar.png', 1, '2021-03-21 03:27:35', '2021-03-21 03:27:35');
 
 -- --------------------------------------------------------
 
@@ -547,7 +548,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (43, '2019_12_23_100454_create_sellers_table', 2),
 (46, '2021_03_05_224715_create_tbl_tranding_items_tablle', 3),
 (47, '2021_03_08_221531_create_tbl__payment_offer_table', 4),
-(49, '2021_03_09_235517_create_tbl__special_offer_table', 5);
+(49, '2021_03_09_235517_create_tbl__special_offer_table', 5),
+(52, '2021_03_13_215642_create_tbl_masonary_table', 6);
 
 -- --------------------------------------------------------
 
@@ -630,7 +632,8 @@ INSERT INTO `orderdetails` (`orderDetails`, `orderId`, `ProductId`, `sellerid`, 
 (22, 20, 44, 23, '**পহেলা ফাল্গুন***', '', '', 1050.00, 0, 1, '2021-01-26 09:55:47', '2021-01-26 09:55:47'),
 (23, 21, 106, 23, 'egyptian jewellery long mala set', '', 'purpale', 2899.00, 0, 1, '2021-01-30 06:40:18', '2021-01-30 06:40:18'),
 (24, 22, 131, 23, 'valentine day t-shirt', 'xl', '', 375.00, 0, 1, '2021-02-01 14:54:05', '2021-02-01 14:54:05'),
-(25, 23, 129, 23, 'valentine day t-shirt', 'L', '', 375.00, 0, 1, '2021-02-04 17:45:06', '2021-02-04 17:45:06');
+(25, 23, 129, 23, 'valentine day t-shirt', 'L', '', 375.00, 0, 1, '2021-02-04 17:45:06', '2021-02-04 17:45:06'),
+(26, 24, 130, 23, 'valentine day t-shirt', 'xl', '', 375.00, 0, 1, '2021-03-14 05:35:47', '2021-03-14 05:35:47');
 
 -- --------------------------------------------------------
 
@@ -683,7 +686,8 @@ INSERT INTO `orders` (`orderIdPrimary`, `customerId`, `ordertrack`, `orderTotal`
 (20, 29, 'c78cb30c7c9c6ce8e91a4d2d29594de7', 1110, 60, NULL, NULL, 0, 20, 1050, 0, NULL, '0', '2021-01-26 09:55:47', '2021-01-26 09:55:47'),
 (21, 8, 'bb5679f48c8874aed18799442301603e', 2959, 60, NULL, NULL, 0, 21, 2899, 0, NULL, '1', '2021-01-30 06:40:18', '2021-01-30 06:42:36'),
 (22, 29, '97294927bce326793ed2ba44d5c594b8', 435, 60, NULL, NULL, 0, 22, 375, 0, NULL, '1', '2021-02-01 14:54:05', '2021-02-01 19:03:22'),
-(23, 8, '2ca37d655b4680bef739621d7a295bee', 435, 60, NULL, NULL, 0, 23, 375, 0, NULL, '0', '2021-02-04 17:45:06', '2021-02-04 17:45:06');
+(23, 8, '2ca37d655b4680bef739621d7a295bee', 435, 60, NULL, NULL, 0, 23, 375, 0, NULL, '0', '2021-02-04 17:45:06', '2021-02-04 17:45:06'),
+(24, 31, 'd597472a10d65560d2cd8e98dafad357', 435, 60, NULL, NULL, 0, 24, 375, 0, NULL, '0', '2021-03-14 05:35:47', '2021-03-14 05:35:47');
 
 -- --------------------------------------------------------
 
@@ -733,7 +737,8 @@ INSERT INTO `ordershippings` (`id`, `name`, `phone`, `district`, `area`, `statea
 (20, 'nayem ahamed', '01775016964', '1', '1', '1', '29', '2', '4', '3', '2021-01-26 09:55:47', '2021-01-26 09:55:47'),
 (21, 'Sheikh Maqsud Ahmed', '01313176868', '1', '1', NULL, '8', 'H#44/A R#8 Shekhertak', 'Near Khondkar Medicine House', '1207', '2021-01-30 06:40:18', '2021-01-30 06:40:18'),
 (22, 'nayem ahamed', '01775016964', '1', '1', '1', '29', '2', '4', '3', '2021-02-01 14:54:05', '2021-02-01 14:54:05'),
-(23, 'Sheikh Maqsud Ahmed', '01313176868', '1', '1', NULL, '8', 'H#44/A R#8 Shekhertak', 'Near Khondkar Medicine House', '1207', '2021-02-04 17:45:06', '2021-02-04 17:45:06');
+(23, 'Sheikh Maqsud Ahmed', '01313176868', '1', '1', NULL, '8', 'H#44/A R#8 Shekhertak', 'Near Khondkar Medicine House', '1207', '2021-02-04 17:45:06', '2021-02-04 17:45:06'),
+(24, 'Nirjon Roy', '01774865115', '1', '1', 'ds', '31', 'sdf', 'sdaf', 'dsfa', '2021-03-14 05:35:46', '2021-03-14 05:35:46');
 
 -- --------------------------------------------------------
 
@@ -807,7 +812,8 @@ INSERT INTO `paymentsaves` (`paymentIdPrimary`, `orderId`, `paymentType`, `cPayn
 (20, 20, 'cash', NULL, NULL, 'pending', '2021-01-26 09:55:47', '2021-01-26 09:55:47'),
 (21, 21, 'cash', NULL, NULL, 'pending', '2021-01-30 06:40:18', '2021-01-30 06:40:18'),
 (22, 22, 'cash', NULL, NULL, 'pending', '2021-02-01 14:54:05', '2021-02-01 14:54:05'),
-(23, 23, 'cash', NULL, NULL, 'pending', '2021-02-04 17:45:06', '2021-02-04 17:45:06');
+(23, 23, 'cash', NULL, NULL, 'pending', '2021-02-04 17:45:06', '2021-02-04 17:45:06'),
+(24, 24, 'cash', NULL, NULL, 'pending', '2021-03-14 05:35:47', '2021-03-14 05:35:47');
 
 -- --------------------------------------------------------
 
@@ -1402,8 +1408,7 @@ INSERT INTO `products` (`id`, `productcat`, `productsubcat`, `productchildcat`, 
 (128, 7, 14, 18, 6, 'valentine day t-shirt', 'valentine-day-t-shirt', 6, 375, 400, NULL, NULL, NULL, NULL, NULL, '<p>❤️Item: Couple T-Shirt<br>❤️Fabric: 100% cotton<br>❤️Description: Chest printed Crew/Round Neck Tee Shirt.<br>❤️Color : White 🤍 / Black 🖤<br>❤️Size: M,L,XL (Asian measurement)<br></p>', '<p>আসছে ১৪ই ফেব্রুইয়ারি ২০২১।<br>  ❤️❤️\"Valentine\'s Day\"❤️❤️<br>তথা ভালোবাসা দিবস কে স্মরণীয় করে রাখতে ভালোবাসার মানুষদের জন্য আমরা নিয়ে এসেছি আপনার মনের কথা বলার পোশাক।<br></p>', 1000, 23, 1, 1, '2021-01-31 09:00:34', '2021-02-01 12:04:58'),
 (129, 7, 14, 18, 6, 'valentine day t-shirt', 'valentine-day-t-shirt', 6, 375, 400, NULL, NULL, NULL, NULL, NULL, '<p>❤️Item: Couple T-Shirt<br>❤️Fabric: 100% cotton<br>❤️Description: Chest printed Crew/Round Neck Tee Shirt.<br>❤️Color : White 🤍 / Black 🖤<br>❤️Size: M,L,XL (Asian measurement)<br></p>', '<p>আসছে ১৪ই ফেব্রুইয়ারি ২০২১।<br>  ❤️❤️\"Valentine\'s Day\"❤️❤️<br>তথা ভালোবাসা দিবস কে স্মরণীয় করে রাখতে ভালোবাসার মানুষদের জন্য আমরা নিয়ে এসেছি আপনার মনের কথা বলার পোশাক।<br></p>', 1000, 23, 1, 1, '2021-01-31 09:00:46', '2021-02-01 12:04:58'),
 (130, 7, 14, 18, 6, 'valentine day t-shirt', 'valentine-day-t-shirt', 6, 375, 400, NULL, NULL, NULL, NULL, NULL, '<p>❤️Item: Couple T-Shirt<br>❤️Fabric: 100% cotton<br>❤️Description: Chest printed Crew/Round Neck Tee Shirt.<br>❤️Color : White 🤍 / Black 🖤<br>❤️Size: M,L,XL (Asian measurement)<br></p>', '<p>আসছে ১৪ই ফেব্রুইয়ারি ২০২১।<br>  ❤️❤️\"Valentine\'s Day\"❤️❤️<br>তথা ভালোবাসা দিবস কে স্মরণীয় করে রাখতে ভালোবাসার মানুষদের জন্য আমরা নিয়ে এসেছি আপনার মনের কথা বলার পোশাক।<br></p>', 1000, 23, 1, 1, '2021-01-31 09:00:58', '2021-02-01 12:04:58'),
-(131, 7, 14, 18, 6, 'valentine day t-shirt', 'valentine-day-t-shirt', 6, 375, 400, NULL, NULL, NULL, NULL, NULL, '<p>❤️Item: Couple T-Shirt<br>❤️Fabric: 100% cotton<br>❤️Description: Chest printed Crew/Round Neck Tee Shirt.<br>❤️Color : White 🤍 / Black 🖤<br>❤️Size: M,L,XL (Asian measurement)<br></p>', '<p>আসছে ১৪ই ফেব্রুইয়ারি ২০২১।<br>  ❤️❤️\"Valentine\'s Day\"❤️❤️<br>তথা ভালোবাসা দিবস কে স্মরণীয় করে রাখতে ভালোবাসার মানুষদের জন্য আমরা নিয়ে এসেছি আপনার মনের কথা বলার পোশাক।<br></p>', 1000, 23, 1, 1, '2021-01-31 09:01:12', '2021-02-01 12:04:58'),
-(132, 1, 3, 0, 1, 'macbook pro', 'macbook-pro', 92, 100000, 1200000, NULL, '83137248', 400, NULL, 2, '<p><b>hghghkjj</b><br></p>', '<blockquote><p>;lkl;;l<br></p></blockquote>', 1100, 12, 1, 1, '2021-03-06 05:00:44', '2021-03-06 05:00:44');
+(131, 7, 14, 18, 6, 'valentine day t-shirt', 'valentine-day-t-shirt', 6, 375, 400, NULL, NULL, NULL, NULL, NULL, '<p>❤️Item: Couple T-Shirt<br>❤️Fabric: 100% cotton<br>❤️Description: Chest printed Crew/Round Neck Tee Shirt.<br>❤️Color : White 🤍 / Black 🖤<br>❤️Size: M,L,XL (Asian measurement)<br></p>', '<p>আসছে ১৪ই ফেব্রুইয়ারি ২০২১।<br>  ❤️❤️\"Valentine\'s Day\"❤️❤️<br>তথা ভালোবাসা দিবস কে স্মরণীয় করে রাখতে ভালোবাসার মানুষদের জন্য আমরা নিয়ে এসেছি আপনার মনের কথা বলার পোশাক।<br></p>', 1000, 23, 1, 1, '2021-01-31 09:01:12', '2021-02-01 12:04:58');
 
 -- --------------------------------------------------------
 
@@ -1507,6 +1512,13 @@ CREATE TABLE `reviews` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `product_id`, `customer_id`, `ratting`, `review`, `status`, `created_at`, `updated_at`) VALUES
+(1, '129', '31', 5, 'v', 0, '2021-03-18 03:29:43', '2021-03-18 03:29:43');
 
 -- --------------------------------------------------------
 
@@ -1769,6 +1781,30 @@ CREATE TABLE `tags` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_masonary`
+--
+
+CREATE TABLE `tbl_masonary` (
+  `masonary_id` int(10) UNSIGNED NOT NULL,
+  `masonary_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `masonary_link` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `masonary_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `publication_status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tbl_masonary`
+--
+
+INSERT INTO `tbl_masonary` (`masonary_id`, `masonary_image`, `masonary_link`, `masonary_name`, `publication_status`, `created_at`, `updated_at`) VALUES
+(2, 'masonary_image/643.jpg', 'http://localhost/mart_n/', 'shart', '1', NULL, NULL),
+(3, 'masonary_image/16.jpg', 'http://localhost/mart_n/', 'shart', '1', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2136,6 +2172,12 @@ ALTER TABLE `tags`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_masonary`
+--
+ALTER TABLE `tbl_masonary`
+  ADD PRIMARY KEY (`masonary_id`);
+
+--
 -- Indexes for table `tbl_paymentoffer`
 --
 ALTER TABLE `tbl_paymentoffer`
@@ -2248,7 +2290,7 @@ ALTER TABLE `createpages`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `districts`
@@ -2272,7 +2314,7 @@ ALTER TABLE `logos`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -2290,19 +2332,19 @@ ALTER TABLE `offers`
 -- AUTO_INCREMENT for table `orderdetails`
 --
 ALTER TABLE `orderdetails`
-  MODIFY `orderDetails` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `orderDetails` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `orderIdPrimary` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `orderIdPrimary` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `ordershippings`
 --
 ALTER TABLE `ordershippings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `pagecategories`
@@ -2314,7 +2356,7 @@ ALTER TABLE `pagecategories`
 -- AUTO_INCREMENT for table `paymentsaves`
 --
 ALTER TABLE `paymentsaves`
-  MODIFY `paymentIdPrimary` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `paymentIdPrimary` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `productcolors`
@@ -2332,7 +2374,7 @@ ALTER TABLE `productimages`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 
 --
 -- AUTO_INCREMENT for table `productsizes`
@@ -2350,7 +2392,7 @@ ALTER TABLE `producttags`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -2411,6 +2453,12 @@ ALTER TABLE `subcategories`
 --
 ALTER TABLE `tags`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_masonary`
+--
+ALTER TABLE `tbl_masonary`
+  MODIFY `masonary_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_paymentoffer`

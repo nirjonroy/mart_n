@@ -10,7 +10,7 @@
               <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-6">
                   <div id="hidemenu" class="hidemenu sidebar-menu">
-                    @include('frontEnd.layouts.includes.sidebar')
+                    
                   </div>
                 </div>
               </div>
@@ -24,173 +24,126 @@
       </div>
     </div>
   </section>
-  <!-- bredcrumb end -->
-  <section class="common-design">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-3">
-          <div class="sidebar sidebar-vandor-shop">
-            <div class="custom-sidebar vandor-shop">
-              <div class="title">
-                <h5>{{$vandorshop->shopname}}</h5>
-              </div>
-              <div class="vandor-info">
-                <div class="vlogo">
-                  <img src="{{asset($vandorshop->shoplogo)}}" alt="">
-                </div>
-                <div class="vandor-contact">
-                  <ul>
-                    <li><a href="tel:{{$vandorshop->sellerphone}}"><i class="fas fa-phone"></i> {{$vandorshop->sellerphone}}</a></li>
-                    <li><a href="mailto:{{$vandorshop->email}}"><i class="fas fa-envelope"></i> {{$vandorshop->selleremail}}</a></li>
-                    @if($vandorshop->selleraddress)
-                    <li><a class="anchor"><i class="fas fa-home"></i> {{$vandorshop->selleraddress}}</a></li>
-                    @endif
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="custom-sidebar mrt-20">
-               <div class="title ">
-                  <h6>product category</h6>
-                </div>
-                  <ul class="mtree transit">
-                    @foreach($categories as $category)
-                    <li>
-                      <a class="anchor">{{$category->catname}}</a>
+  
+
+<!-- breadcrumb start -->
+<div class="breadcrumb-main ">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="breadcrumb-contain">
+                    <div>
+                        <h2>{{$vandorshop->shopname}}</h2>
                         <ul>
-                          @foreach($category->subcategories as $subcategory)
-                          <li><a href="{{url('subcategory/'.$subcategory->slug.'/'.$subcategory->id)}}">{{$subcategory->subcategoryName}} <span>@php
-                            $sproducs = App\Product::where(['productsubcat'=>$subcategory->id,'sellerid'=>$vandorshop->id])->count();
-                          @endphp ({{$sproducs}})</span></a>
-                              <ul>
-                                @foreach($subcategory->childcategories as $childcate)
-                                <li><a href="{{url('products/'.$childcate->slug.'/'.$childcate->id)}}">{{$childcate->childcategoryName}} <span>
-                                  @php
-                                      $cproducs = App\Product::where(['productchildcat'=>$childcate->id,'sellerid'=>$vandorshop->id])->count();
-                                    @endphp ({{$cproducs}})</span></a></li>
-                                          @endforeach
-                              </ul>
-                          </li>
-                          @endforeach
+                            <li><a href="#">home</a></li>
+                            <li><i class="fa fa-angle-double-right"></i></li>
+                            <li><a href="#">vandor</a></li>
                         </ul>
-                    </li>
-                    @endforeach
-                </ul>
-            </div>
-            <!-- category end-->
-            <!-- <div class="custom-sidebar mrt-20">
-               <div class=" title ">
-                    <h6>Brands</h6>
-                </div>
-                <div class="sidebar-brand">
-                  <ul>
-                    @foreach($brands as $value)
-                      <li><a href="{{url('brands-products/'.$value->slug.'/'.$value->id)}}">{{$value->brandName}}</a></li>
-                    @endforeach
-                  </ul>
-                </div>
-            </div> -->
-            <!-- brand end -->
-            <div class="custom-sidebar mrt-20">
-               <div class=" title ">
-                    <h6>Price Range</h6>
-                </div>
-                <div class="sidebar-price">
-                  <form action="">
-                    <div class="form-group">
-                      <input type="text" placeholder="Low Price">
                     </div>
-                    <div class="form-group">
-                      <input type="text" placeholder="High Price">
-                    </div>
-                    <div class="form-group">
-                      <input type="submit" value="filter" class="sfilter">
-                    </div>
-                  </form>
                 </div>
             </div>
-            <!-- price end -->
-            
-          </div>
         </div>
-        <!-- col-lg end -->
-        <div class="col-lg-9 col-md-9 col-sm-9">
-          <div class="maincontent vandor-shop">
+    </div>
+</div>
+<!-- breadcrumb End -->
+
+<!-- section start -->
+<section class="section-big-pt-space bg-light">
+    <div class="collection-wrapper">
+        <div class="custom-container">
             <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="vandor-banner">
-                  <img src="{{asset($vandorshop->shopbanner)}}" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="sorting-nav mrt-20">
-              <div class="row">
-                <div class="col-lg-5 col-md-5 col-sm-5">
-                  <div class="product-sorting">
-                    <p>We Found ({{$totalproducts->count()}}) Products</p> 
-                  </div>
-                </div>
-                <!-- col end -->
-                <div class="col-lg-7 col-md-7 col-sm-7">
-                  <div class="sortnav">
-                    {{$products->links()}}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- sorting row -->
-            <div class="row">
-              @foreach($products as $key=>$value)
-              <div class="col-lg-3 col-md-3 col-sm-3">
-                <div class="single-product">
-                  <a href="{{url('product/details/'.$value->slug.'/'.$value->id)}}">
-                    <div class="image">
-                      <div class="product-slider owl-carousel">
-                       @foreach($productimage as $image)
-                         @if($value->id==$image->product_id)
-                            <img src="{{asset($image->image)}}" alt="">
-                          @endif
-                        @endforeach
-                      </div>
-                      <div class="cart-area">
-                          <ul>
-                            <li><a href="{{url('product/details/'.$value->slug.'/'.$value->id)}}" class="cart-btn">Add To Cart</a></li>
-                            <li><a href="{{url('product/details/'.$value->slug.'/'.$value->id)}}" class="wish-btn">Wishlist</a></li>
-                          </ul>
+                <div class="collection-content col">
+                    <div class="page-main-content">
+                        <div class="top-banner-wrapper">
+                            <a href="#"><img src="{{asset($vandorshop->shoplogo)}}" class="img-fluid  w-100" alt="category"></a>
+                            <div class="top-banner-content small-section pb-0">
+                                <!-- <h4>fashion</h4>
+                                <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h5>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p> -->
+                                <h2>We Found ({{$totalproducts->count()}}) Products</h2>
+                            </div>
+                        </div>
+                        <div class="collection-product-wrapper">
+                            <div class="section-big-pt-space portfolio-section portfolio-padding metro-section port-col">
+                                <div class="isotopeContainer row metro-block">
+                                  @foreach($products as $key=>$value)
+                                    <div class="col-xl-3 col-lg-4 col-sm-6  isotopeSelector">
+                                      <a href="{{url('product/details/'.$value->slug.'/'.$value->id)}}">
+                                        <div class="product">
+                                            <div class="product-box">
+                                                <div class="product-imgbox">
+                                                    <div class="product-front">
+                                                      @foreach($productimage as $image)
+                                                       @if($value->id==$image->product_id) 
+                                                        <img src="{{asset($image->image)}}" class="img-fluid  " alt="product">
+                                                       @endif
+                                                       @endforeach 
+                                                    </div>
+                                                    <div class="product-icon">
+                                                        <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+                                                            <i class="ti-bag" ></i>
+                                                        </button>
+                                                        <a href="javascript:void(0)" title="Add to Wishlist">
+                                                            <i class="ti-heart" aria-hidden="true"></i>
+                                                        </a>
+                                                        <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                                            <i class="ti-search" aria-hidden="true"></i>
+                                                        </a>
+                                                        <a href="compare.html" title="Compare">
+                                                            <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="product-detail">
+                                                        <a href="product-page(no-sidebar).html">
+                                                            <h6>{{str_limit($value->productname,30)}} id {{$value->id}}</h6>
+                                                        </a>
+                                                        <h4><span>৳</span> {{$value->productnewprice}}</p></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        </a>
+                                    </div>
+                                    @endforeach
+
+
+
+
+
+
+
+
+                                
+                                </div>
+                            </div>
+                            <div class="product-pagination mt-0">
+                                <div class="theme-paggination-block">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-md-6 col-sm-12">
+                                            <nav aria-label="Page navigation">
+                                                <ul class="pagination">
+                                                    <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> {{$products->links()}}<span class="sr-only">Next</span></a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                        <div class="col-xl-6 col-md-6 col-sm-12">
+                                            <div class="product-search-count-bottom">
+                                                <h5>Showing Products Result</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="text">
-                        <p class="name">{{str_limit($value->productname,30)}} id {{$value->id}}</p>
-                        <p class="newprice"><span>৳</span> {{$value->productnewprice}}</p>
-                         @if($value->productdiscount)
-                              <p class="oldprice"><del> ৳ @if($value->productdiscount) 
-                                @php $offertaka= (($value->productdiscount*$value->productnewprice)/100);
-                                 $oldprice = $value->productnewprice+$offertaka; 
-                                @endphp 
-                                
-                                {{number_format($oldprice,0)}} </del> <span>
-                              @endif- {{number_format($value->productdiscount,0)}} %</span>
-                          </p>
-                          @endif
-                    </div>
-                </a>
                 </div>
-              </div>
-              <!-- column-ls-5 -->
-              @endforeach
             </div>
-            <!-- row end -->
-            
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="sortnav text-left">
-                    {{$products->links()}}
-                  </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </section>
+</section>
+<!-- section End -->
+
+
+
 @endsection
